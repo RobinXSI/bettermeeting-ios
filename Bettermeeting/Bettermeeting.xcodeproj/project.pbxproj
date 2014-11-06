@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		001AEBF61A0BDD6D0080428F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AEBF51A0BDD6D0080428F /* LoginViewController.m */; };
+		001AEBFE1A0BF1CD0080428F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AEBFD1A0BF1CD0080428F /* User.m */; };
+		001AEC011A0C11EB0080428F /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AEC001A0C11EB0080428F /* APIController.m */; };
+		002DEFA61A0BCF2B003DFBC1 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DEFA51A0BCF2B003DFBC1 /* Meeting.m */; };
+		00F5FFBF1A0BC5560007CD50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFBE1A0BC5560007CD50 /* main.m */; };
+		00F5FFC21A0BC5560007CD50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC11A0BC5560007CD50 /* AppDelegate.m */; };
+		00F5FFC51A0BC5560007CD50 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC41A0BC5560007CD50 /* MasterViewController.m */; };
+		00F5FFCB1A0BC5560007CD50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F5FFC91A0BC5560007CD50 /* Main.storyboard */; };
+		00F5FFCD1A0BC5560007CD50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F5FFCC1A0BC5560007CD50 /* Images.xcassets */; };
+		00F5FFD01A0BC5560007CD50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F5FFCE1A0BC5560007CD50 /* LaunchScreen.xib */; };
+		00F5FFDC1A0BC5560007CD50 /* BettermeetingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFDB1A0BC5560007CD50 /* BettermeetingTests.m */; };
+		53B0FF8F6BBE4589EC93DA76 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 905315CB1739E30CD92F5A8D /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00F5FFD61A0BC5560007CD50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00F5FFB11A0BC5560007CD50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00F5FFB81A0BC5560007CD50;
+			remoteInfo = Bettermeeting;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		001AEBF41A0BDD6D0080428F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		001AEBF51A0BDD6D0080428F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		001AEBFC1A0BF1CD0080428F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		001AEBFD1A0BF1CD0080428F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		001AEBFF1A0C11EB0080428F /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
+		001AEC001A0C11EB0080428F /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
+		002DEFA41A0BCF2B003DFBC1 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
+		002DEFA51A0BCF2B003DFBC1 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		00F5FFB91A0BC5560007CD50 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00F5FFBD1A0BC5560007CD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00F5FFBE1A0BC5560007CD50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00F5FFC01A0BC5560007CD50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		00F5FFC11A0BC5560007CD50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		00F5FFC31A0BC5560007CD50 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		00F5FFC41A0BC5560007CD50 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		00F5FFCA1A0BC5560007CD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00F5FFCC1A0BC5560007CD50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		00F5FFCF1A0BC5560007CD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		00F5FFD51A0BC5560007CD50 /* BettermeetingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BettermeetingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00F5FFDA1A0BC5560007CD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00F5FFDB1A0BC5560007CD50 /* BettermeetingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BettermeetingTests.m; sourceTree = "<group>"; };
+		905315CB1739E30CD92F5A8D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B664F126333B715D6A41B10B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DB7C6BD576A1B43644D0F650 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00F5FFB61A0BC5560007CD50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B0FF8F6BBE4589EC93DA76 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00F5FFD21A0BC5560007CD50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		001AEBF71A0BDD7D0080428F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				00F5FFC31A0BC5560007CD50 /* MasterViewController.h */,
+				00F5FFC41A0BC5560007CD50 /* MasterViewController.m */,
+				001AEBF41A0BDD6D0080428F /* LoginViewController.h */,
+				001AEBF51A0BDD6D0080428F /* LoginViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		001AEBF81A0BDD850080428F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				002DEFA41A0BCF2B003DFBC1 /* Meeting.h */,
+				002DEFA51A0BCF2B003DFBC1 /* Meeting.m */,
+				001AEBFC1A0BF1CD0080428F /* User.h */,
+				001AEBFD1A0BF1CD0080428F /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		001AEC021A0C11F20080428F /* RESTController */ = {
+			isa = PBXGroup;
+			children = (
+				001AEBFF1A0C11EB0080428F /* APIController.h */,
+				001AEC001A0C11EB0080428F /* APIController.m */,
+			);
+			name = RESTController;
+			sourceTree = "<group>";
+		};
+		00F5FFB01A0BC5560007CD50 = {
+			isa = PBXGroup;
+			children = (
+				00F5FFBB1A0BC5560007CD50 /* Bettermeeting */,
+				00F5FFD81A0BC5560007CD50 /* BettermeetingTests */,
+				00F5FFBA1A0BC5560007CD50 /* Products */,
+				1093815516AE540252785E6C /* Pods */,
+				3A2847F511363199A2A1FC50 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		00F5FFBA1A0BC5560007CD50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00F5FFB91A0BC5560007CD50 /* Bettermeeting.app */,
+				00F5FFD51A0BC5560007CD50 /* BettermeetingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00F5FFBB1A0BC5560007CD50 /* Bettermeeting */ = {
+			isa = PBXGroup;
+			children = (
+				001AEC021A0C11F20080428F /* RESTController */,
+				001AEBF81A0BDD850080428F /* Model */,
+				001AEBF71A0BDD7D0080428F /* ViewController */,
+				00F5FFC01A0BC5560007CD50 /* AppDelegate.h */,
+				00F5FFC11A0BC5560007CD50 /* AppDelegate.m */,
+				00F5FFC91A0BC5560007CD50 /* Main.storyboard */,
+				00F5FFCC1A0BC5560007CD50 /* Images.xcassets */,
+				00F5FFCE1A0BC5560007CD50 /* LaunchScreen.xib */,
+				00F5FFBC1A0BC5560007CD50 /* Supporting Files */,
+			);
+			path = Bettermeeting;
+			sourceTree = "<group>";
+		};
+		00F5FFBC1A0BC5560007CD50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00F5FFBD1A0BC5560007CD50 /* Info.plist */,
+				00F5FFBE1A0BC5560007CD50 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00F5FFD81A0BC5560007CD50 /* BettermeetingTests */ = {
+			isa = PBXGroup;
+			children = (
+				00F5FFDB1A0BC5560007CD50 /* BettermeetingTests.m */,
+				00F5FFD91A0BC5560007CD50 /* Supporting Files */,
+			);
+			path = BettermeetingTests;
+			sourceTree = "<group>";
+		};
+		00F5FFD91A0BC5560007CD50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00F5FFDA1A0BC5560007CD50 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1093815516AE540252785E6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B664F126333B715D6A41B10B /* Pods.debug.xcconfig */,
+				DB7C6BD576A1B43644D0F650 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3A2847F511363199A2A1FC50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				905315CB1739E30CD92F5A8D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00F5FFB81A0BC5560007CD50 /* Bettermeeting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00F5FFDF1A0BC5560007CD50 /* Build configuration list for PBXNativeTarget "Bettermeeting" */;
+			buildPhases = (
+				C3FE7F48FAD159295C53C1EE /* Check Pods Manifest.lock */,
+				00F5FFB51A0BC5560007CD50 /* Sources */,
+				00F5FFB61A0BC5560007CD50 /* Frameworks */,
+				00F5FFB71A0BC5560007CD50 /* Resources */,
+				B9402867F2B41092BADFD9C3 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bettermeeting;
+			productName = Bettermeeting;
+			productReference = 00F5FFB91A0BC5560007CD50 /* Bettermeeting.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00F5FFD41A0BC5560007CD50 /* BettermeetingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00F5FFE21A0BC5560007CD50 /* Build configuration list for PBXNativeTarget "BettermeetingTests" */;
+			buildPhases = (
+				00F5FFD11A0BC5560007CD50 /* Sources */,
+				00F5FFD21A0BC5560007CD50 /* Frameworks */,
+				00F5FFD31A0BC5560007CD50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00F5FFD71A0BC5560007CD50 /* PBXTargetDependency */,
+			);
+			name = BettermeetingTests;
+			productName = BettermeetingTests;
+			productReference = 00F5FFD51A0BC5560007CD50 /* BettermeetingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00F5FFB11A0BC5560007CD50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = HSR;
+				TargetAttributes = {
+					00F5FFB81A0BC5560007CD50 = {
+						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
+					};
+					00F5FFD41A0BC5560007CD50 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 00F5FFB81A0BC5560007CD50;
+					};
+				};
+			};
+			buildConfigurationList = 00F5FFB41A0BC5560007CD50 /* Build configuration list for PBXProject "Bettermeeting" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00F5FFB01A0BC5560007CD50;
+			productRefGroup = 00F5FFBA1A0BC5560007CD50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00F5FFB81A0BC5560007CD50 /* Bettermeeting */,
+				00F5FFD41A0BC5560007CD50 /* BettermeetingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00F5FFB71A0BC5560007CD50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F5FFCB1A0BC5560007CD50 /* Main.storyboard in Resources */,
+				00F5FFD01A0BC5560007CD50 /* LaunchScreen.xib in Resources */,
+				00F5FFCD1A0BC5560007CD50 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00F5FFD31A0BC5560007CD50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9402867F2B41092BADFD9C3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3FE7F48FAD159295C53C1EE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00F5FFB51A0BC5560007CD50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				001AEC011A0C11EB0080428F /* APIController.m in Sources */,
+				00F5FFC21A0BC5560007CD50 /* AppDelegate.m in Sources */,
+				002DEFA61A0BCF2B003DFBC1 /* Meeting.m in Sources */,
+				001AEBFE1A0BF1CD0080428F /* User.m in Sources */,
+				00F5FFC51A0BC5560007CD50 /* MasterViewController.m in Sources */,
+				00F5FFBF1A0BC5560007CD50 /* main.m in Sources */,
+				001AEBF61A0BDD6D0080428F /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00F5FFD11A0BC5560007CD50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F5FFDC1A0BC5560007CD50 /* BettermeetingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00F5FFD71A0BC5560007CD50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00F5FFB81A0BC5560007CD50 /* Bettermeeting */;
+			targetProxy = 00F5FFD61A0BC5560007CD50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00F5FFC91A0BC5560007CD50 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00F5FFCA1A0BC5560007CD50 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		00F5FFCE1A0BC5560007CD50 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00F5FFCF1A0BC5560007CD50 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00F5FFDD1A0BC5560007CD50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		00F5FFDE1A0BC5560007CD50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00F5FFE01A0BC5560007CD50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B664F126333B715D6A41B10B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bettermeeting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		00F5FFE11A0BC5560007CD50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB7C6BD576A1B43644D0F650 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bettermeeting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		00F5FFE31A0BC5560007CD50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BettermeetingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bettermeeting.app/Bettermeeting";
+			};
+			name = Debug;
+		};
+		00F5FFE41A0BC5560007CD50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BettermeetingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bettermeeting.app/Bettermeeting";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00F5FFB41A0BC5560007CD50 /* Build configuration list for PBXProject "Bettermeeting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00F5FFDD1A0BC5560007CD50 /* Debug */,
+				00F5FFDE1A0BC5560007CD50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00F5FFDF1A0BC5560007CD50 /* Build configuration list for PBXNativeTarget "Bettermeeting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00F5FFE01A0BC5560007CD50 /* Debug */,
+				00F5FFE11A0BC5560007CD50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00F5FFE21A0BC5560007CD50 /* Build configuration list for PBXNativeTarget "BettermeetingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00F5FFE31A0BC5560007CD50 /* Debug */,
+				00F5FFE41A0BC5560007CD50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00F5FFB11A0BC5560007CD50 /* Project object */;
+}
