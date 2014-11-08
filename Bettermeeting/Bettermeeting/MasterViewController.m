@@ -39,7 +39,6 @@
 }
 
 - (void)loadMeetings {
-    [apiService configureRestKitForMeeting];
     
     [apiService getAllMeetingsOnSucces:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         _meetings = mappingResult.array;

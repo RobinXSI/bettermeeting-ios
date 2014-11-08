@@ -8,6 +8,7 @@
 
 #import "UserService.h"
 #import "APIService.h"
+#import <RestKit/RestKit.h>
 
 @implementation UserService {
     APIService *apiService;
@@ -21,6 +22,10 @@
         apiService = [[APIService alloc] init];
     }
     return self;
+}
+
+-(void)getUserInformation {
+    
 }
 
 -(void)getLoggedInUserOnSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void(^)(AFHTTPRequestOperation *operation, NSError *error))failure {
@@ -56,12 +61,12 @@
     [[NSUserDefaults standardUserDefaults] setObject:[emptyUser createDictionary] forKey:@"ActualUser"];
 }
 
-- (void)registerPushTokenOnUser:(User *)user {
+- (NSString *)getPushToken {
     NSString *pushToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"pushToken"];
     if (pushToken != nil && ![pushToken isEqualToString:@""] && [pushToken length] > 0) {
-        user.pushToken = pushToken;
-        // UPDATE PUSH TOKEN ONLINE
+        return pushToken;
     }
+    return @"";
 }
 
 - (void)doLoginWithEmail:(NSString *)email andPassword:(NSString *)password onSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void(^)(AFHTTPRequestOperation *operation, NSError *error))failure{
@@ -77,12 +82,27 @@
 }
 
 - (void)requestLoginWithUser: (User *)user onSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void(^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+
     NSString *path = [NSString stringWithFormat:@"/api/user/login?username=%@&password=%@", user.email, user.password];
     [apiService performGETonPath:path
                        onSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
                            NSLog(@"Response: %@", [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
-                           [self registerPushTokenOnUser:user];
-                           [self persistUserSettingsForUser:user];
+
+                           NSError *error;
+                           NSMutableDictionary *returnDataAsJson = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
+                           if (error) {
+                               NSLog(@"%@", [error localizedDescription]);
+                           } else {
+                               NSDictionary *userDetails = returnDataAsJson[@"user"];
+                               User *temp = [[User alloc] init];
+                               temp._id = userDetails[@"_id"][@"$oid"];
+                               temp.email = userDetails[@"email"];
+                               temp.firstName = userDetails[@"firstName"];
+                               temp.lastName = userDetails[@"lastName"];
+                               temp.password = userDetails[@"password"];
+                               temp.pushToken = [self getPushToken];
+                               [self persistUserSettingsForUser:temp];
+                           }
                            success(operation, responseObject);
                        }
                          onError:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -18,6 +18,10 @@
     return self;
 }
 
+- (void)configureRestKitForUser {
+    
+}
+
 - (void)configureRestKitForMeeting
 {
     // initialize AFNetworking HTTP Client
@@ -45,6 +49,7 @@
 }
 
 - (void)getAllMeetingsOnSucces:(void(^)(RKObjectRequestOperation *operation, RKMappingResult *mappingResult))success onError:(void(^)(RKObjectRequestOperation *operation, NSError *error))error {
+    [self configureRestKitForMeeting];
     [[RKObjectManager sharedManager] getObjectsAtPath:@"/api/user/meetings"
                                            parameters:nil
                                               success: success
