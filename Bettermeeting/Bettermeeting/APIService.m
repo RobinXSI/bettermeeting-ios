@@ -35,7 +35,13 @@
     
     [meetingMapping addAttributeMappingsFromDictionary:@{
                                                          @"goal": @"goal",
-                                                         @"date": @"date"
+                                                         @"date": @"date",
+                                                         @"organizer": @"organizer",
+                                                         @"decisions": @"decisions",
+                                                         @"votesUp": @"votesUp",
+                                                         @"votesDown": @"votesDown",
+                                                         @"actionPoints": @"actionPoints",
+                                                         @"_id": @"_id",
                                                          }];
     
     // register mappings with the provider using a response descriptor

@@ -72,7 +72,7 @@
     
     Meeting *meeting = self.meetings[indexPath.row];
     cell.textLabel.text = meeting.goal;
-    NSLog(@"%@", meeting.date.stringValue);
+    NSLog(@"%@", meeting);
     return cell;
 }
 
