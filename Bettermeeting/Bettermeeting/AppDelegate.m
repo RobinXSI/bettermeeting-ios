@@ -31,7 +31,7 @@
     
     NSString *token = [deviceToken description];
     NSString *tokenWithoutWhitespace = [[[token stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""];
-    [[NSUserDefaults standardUserDefaults] setObject:tokenWithoutWhitespace forKey:@"PushToken"];
+    [[NSUserDefaults standardUserDefaults] setObject:tokenWithoutWhitespace forKey:@"pushToken"];
     NSLog(@"%@", tokenWithoutWhitespace);
     
 }

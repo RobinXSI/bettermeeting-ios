@@ -86,7 +86,7 @@
 
 - (IBAction)logoutClicked:(id)sender {
     [userService doLogoutOnSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+        [self dismissViewControllerAnimated:YES completion:nil ];
     } onFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
 
     }];

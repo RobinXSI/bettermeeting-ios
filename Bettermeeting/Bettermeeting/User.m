@@ -11,15 +11,31 @@
 @implementation User
 
 
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        self._id = @"";
+        self.email = @"";
+        self.firstName = @"";
+        self.lastName = @"";
+        self.password = @"";
+        self.pushToken = @"";
+    }
+    return self;
+}
+
+
 - (NSDictionary *)createDictionary {
     
     NSDictionary *dictionary = @{
-                                 @"_id": self._id ? self._id : @"",
-                                 @"email": self.email ? self.email : @"",
-                                 @"firstName": self.firstName ? self.firstName : @"",
-                                 @"lastName": self.lastName ? self.lastName : @"",
-                                 @"password": self.password ? self.password : @"",
-                                 @"password": self.pushToken ? self.pushToken : @""
+                                 @"_id": self._id,
+                                 @"email": self.email,
+                                 @"firstName": self.firstName,
+                                 @"lastName": self.lastName,
+                                 @"password": self.password,
+                                 @"pushToken": self.pushToken
                                  };
     return dictionary;
 }
