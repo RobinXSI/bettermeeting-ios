@@ -7,15 +7,19 @@
 //
 
 #import "MasterViewController.h"
-#import <RestKit/RestKit.h>
 #import "Meeting.h"
+#import "APIService.h"
+#import "UserService.h"
 
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
 @end
 
-@interface MasterViewController ()
+@interface MasterViewController () {
+    APIService *apiService;
+    UserService *userService;
+}
 
 @property (nonatomic, strong) NSArray *meetings;
 @end
@@ -28,94 +32,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self configureRestKit];
-    [self authenticateUserGet];
-    //[self logoutUser];
+    apiService = [[APIService alloc] init];
+    userService = [[UserService alloc] init];
+    [self loadMeetings];
 
-    
-
-    
-}
-
-- (void)configureRestKit
-{
-    // initialize AFNetworking HTTP Client
-    NSURL *baseURL = [NSURL URLWithString:@"http://localhost:9000"];
-    AFHTTPClient * client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-    
-    // initialize RestKit
-    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    
-    // setup object mappings
-    RKObjectMapping *meetingMapping = [RKObjectMapping mappingForClass:[Meeting class]];
-    
-    [meetingMapping addAttributeMappingsFromDictionary:@{
-                                                         @"goal": @"goal",
-                                                         @"date": @"date"
-                                                         }];
-    
-    // register mappings with the provider using a response descriptor
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:meetingMapping
-                                                                                            method:RKRequestMethodGET
-                                                                                       pathPattern:@"/api/meetings"
-                                                                                           keyPath:nil
-                                                                                       statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    
-    
-    
-    
-    
-    
-    [[RKObjectManager sharedManager] addResponseDescriptor:responseDescriptor];
-    
-    
-    
-    
-    
-    
-    
-    
-    [objectManager addResponseDescriptor:responseDescriptor];
-}
-
-- (void)authenticateUserGet {
-    [self getRequestWithoutResponse:@"http://localhost:9000/api/user/login?username=p1meier@hsr.ch&password=p1meier" withMethodAfter:@selector(loadMeetings)];
-}
-
-
-- (void)logoutUser {
-    [self getRequestWithoutResponse:@"http://localhost:9000/api/user/logout" withMethodAfter:@selector(loadMeetings)];
-}
-
-- (void)getRequestWithoutResponse:(NSString *)path withMethodAfter:(SEL)functionAfter{
-    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:9000/"]];
-    
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET"
-                                                            path:path
-                                                      parameters:nil];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [httpClient registerHTTPOperationClass:[AFHTTPRequestOperation class]];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Response: %@", [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
-        [self performSelector:functionAfter withObject:self];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    [operation start];
 }
 
 - (void)loadMeetings {
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/api/meetings"
-                                           parameters:nil
-                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                  _meetings = mappingResult.array;
-                                                  [self.tableView reloadData];
-                                              }
-                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                  NSLog(@"What do you mean by 'there is no meeting?' : %@", error);
-                                              }];
+    [apiService configureRestKitForMeeting];
+    
+    [apiService getAllMeetingsOnSucces:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        _meetings = mappingResult.array;
+        [self.tableView reloadData];
+    } onError:^(RKObjectRequestOperation *operation, NSError *error) {
+        NSLog(@"What do you mean by 'there is no meeting?' : %@", error);
+    }];
 }
 
 
@@ -153,4 +84,12 @@
 
 
 
+- (IBAction)logoutClicked:(id)sender {
+    [userService doLogoutOnSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+    } onFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+    }];
+
+}
 @end

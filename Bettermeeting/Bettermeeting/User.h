@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *password;
-@property (nonatomic, strong) NSString *pushId;
+@property (nonatomic, strong) NSString *pushToken;
 
 - (NSDictionary *)createDictionary;
 + (User *)createFromDictionary: (NSDictionary *)dictionary;

@@ -18,7 +18,8 @@
                                  @"email": self.email ? self.email : @"",
                                  @"firstName": self.firstName ? self.firstName : @"",
                                  @"lastName": self.lastName ? self.lastName : @"",
-                                 @"password": self.password ? self.password : @""
+                                 @"password": self.password ? self.password : @"",
+                                 @"password": self.pushToken ? self.pushToken : @""
                                  };
     return dictionary;
 }
@@ -30,6 +31,7 @@
     actualUser.firstName = dictionary[@"firstName"];
     actualUser.lastName = dictionary[@"lastName"];
     actualUser.password = dictionary[@"password"];
+    actualUser.pushToken = dictionary[@"pushToken"];
     return actualUser;
 }
 

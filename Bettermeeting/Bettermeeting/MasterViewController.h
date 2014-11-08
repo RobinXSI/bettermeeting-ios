@@ -10,6 +10,7 @@
 
 @interface MasterViewController : UITableViewController
 
+- (IBAction)logoutClicked:(id)sender;
 
 @end
 

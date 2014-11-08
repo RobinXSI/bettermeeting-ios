@@ -28,7 +28,8 @@ echo 'Connected to APNS' . PHP_EOL;
 // Create the payload body
 $body['aps'] = array(
 	'alert' => $message,
-	'sound' => 'default'
+	'sound' => 'default',
+	'meetingId' => '545c84a7a13e81f8a49cb639'
 	);
 
 // Encode the payload as JSON

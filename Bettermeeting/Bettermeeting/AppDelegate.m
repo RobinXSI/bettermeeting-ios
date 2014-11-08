@@ -30,8 +30,10 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     NSString *token = [deviceToken description];
-    NSString *tokenWithoutWhitespace = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *tokenWithoutWhitespace = [[[token stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""];
+    [[NSUserDefaults standardUserDefaults] setObject:tokenWithoutWhitespace forKey:@"PushToken"];
     NSLog(@"%@", tokenWithoutWhitespace);
+    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -40,8 +42,11 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-
+    NSString *meetingId = [[userInfo valueForKey:@"aps"] valueForKey:@"meetingId"];
     NSLog(@"Received Notification");
+    
+    NSLog(@"%@", meetingId);
+    
 }
 
 

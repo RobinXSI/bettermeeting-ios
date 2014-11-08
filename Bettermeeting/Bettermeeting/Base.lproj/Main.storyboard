@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ie2-XD-UgP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -17,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="64"/>
+            <point key="canvasLocation" x="-663" y="-84"/>
         </scene>
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -59,7 +60,13 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Title" id="5AA-Jg-gS8">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="0ad-Mx-YUp">
+                            <connections>
+                                <action selector="logoutClicked:" destination="pGg-6v-bdr" id="Q94-lJ-a3D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,61 +84,116 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fj-zh-76r">
-                                <rect key="frame" x="16" y="20" width="58" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fj-zh-76r">
+                                <rect key="frame" x="16" y="177" width="568" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGy-Wg-fN0">
-                                <rect key="frame" x="16" y="92" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kXu-AP-YEs">
-                                <rect key="frame" x="121" y="11" width="175" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ie2-XD-UgP" id="nic-iC-ODg"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZbS-ea-ACl">
-                                <rect key="frame" x="121" y="83" width="175" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ie2-XD-UgP" id="tUi-8f-Ohk"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWQ-5q-Iot">
-                                <rect key="frame" x="16" y="146" width="50" height="30"/>
-                                <state key="normal" title="Sign IN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWQ-5q-Iot">
+                                <rect key="frame" x="16" y="550" width="568" height="30"/>
+                                <state key="normal" title="Sign In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="signinClicked:" destination="ie2-XD-UgP" eventType="touchUpInside" id="NXQ-JU-ycp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label Warnings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrC-s7-yqi">
-                                <rect key="frame" x="141" y="146" width="119" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bettermeeting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nb-GV-q5n">
+                                <rect key="frame" x="16" y="20" width="568" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVW-EL-PAk">
+                                <rect key="frame" x="16" y="105" width="568" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kXu-AP-YEs">
+                                <rect key="frame" x="16" y="205" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ie2-XD-UgP" id="nic-iC-ODg"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3B-69-GFp">
+                                <rect key="frame" x="16" y="243" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Warning" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oly-eQ-emf">
+                                <rect key="frame" x="16" y="501" width="568" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hrf-kS-juS">
+                                <rect key="frame" x="16" y="272" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="7Fj-zh-76r" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="1ay-aT-wKK"/>
+                            <constraint firstItem="Hrf-kS-juS" firstAttribute="top" secondItem="j3B-69-GFp" secondAttribute="bottom" constant="8" id="1rb-16-MWt"/>
+                            <constraint firstItem="kVW-EL-PAk" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="2SV-eX-uFn"/>
+                            <constraint firstItem="fcc-iy-6bj" firstAttribute="top" secondItem="LWQ-5q-Iot" secondAttribute="bottom" constant="20" id="4da-7W-qqx"/>
+                            <constraint firstItem="kVW-EL-PAk" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="5ZF-NU-6FV"/>
+                            <constraint firstItem="kXu-AP-YEs" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="7Ps-Yu-Ptz"/>
+                            <constraint firstItem="j3B-69-GFp" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="BUf-8N-9lf"/>
+                            <constraint firstItem="j3B-69-GFp" firstAttribute="top" secondItem="kXu-AP-YEs" secondAttribute="bottom" constant="8" id="NYP-zm-JT0"/>
+                            <constraint firstItem="7Fj-zh-76r" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="Omf-Oo-o8X"/>
+                            <constraint firstItem="LWQ-5q-Iot" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="PJU-k6-dMg"/>
+                            <constraint firstItem="j3B-69-GFp" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="R7D-B4-4Rg"/>
+                            <constraint firstItem="Hrf-kS-juS" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="T4w-Cf-RTK"/>
+                            <constraint firstItem="7Fj-zh-76r" firstAttribute="top" secondItem="kVW-EL-PAk" secondAttribute="bottom" constant="32" id="UiK-ne-tVf"/>
+                            <constraint firstItem="LWQ-5q-Iot" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="VF2-AB-GVy"/>
+                            <constraint firstItem="LWQ-5q-Iot" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="aRa-bk-jJY"/>
+                            <constraint firstItem="7Fj-zh-76r" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="aX2-oC-Grv"/>
+                            <constraint firstItem="LWQ-5q-Iot" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="apc-Sa-1aR"/>
+                            <constraint firstItem="6nb-GV-q5n" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="bZW-cW-zgP"/>
+                            <constraint firstItem="7Fj-zh-76r" firstAttribute="top" secondItem="z8M-Xc-uf9" secondAttribute="bottom" constant="8" id="e40-7d-Dgl"/>
+                            <constraint firstItem="oly-eQ-emf" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="gc4-HZ-nqW"/>
+                            <constraint firstItem="kXu-AP-YEs" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="gmK-RX-awh"/>
+                            <constraint firstItem="kVW-EL-PAk" firstAttribute="top" secondItem="6nb-GV-q5n" secondAttribute="bottom" constant="20" id="izi-Yh-qR2"/>
+                            <constraint firstItem="kXu-AP-YEs" firstAttribute="top" secondItem="7Fj-zh-76r" secondAttribute="bottom" constant="7.5" id="jxi-Nn-BwK"/>
+                            <constraint firstItem="Hrf-kS-juS" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="k9A-No-DfS"/>
+                            <constraint firstItem="LWQ-5q-Iot" firstAttribute="top" secondItem="oly-eQ-emf" secondAttribute="bottom" constant="8" id="lrT-Fs-iOY"/>
+                            <constraint firstItem="7Fj-zh-76r" firstAttribute="trailing" secondItem="TJ8-Zz-mTg" secondAttribute="trailingMargin" id="ntr-UK-j3V"/>
+                            <constraint firstItem="6nb-GV-q5n" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="pKH-rA-ULG"/>
+                            <constraint firstItem="kXu-AP-YEs" firstAttribute="top" secondItem="7Fj-zh-76r" secondAttribute="bottom" constant="8" id="pQO-iQ-YEa"/>
+                            <constraint firstItem="kXu-AP-YEs" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="rFh-Jo-Mij"/>
+                            <constraint firstItem="kXu-AP-YEs" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="uDw-eZ-G0a"/>
+                            <constraint firstItem="fcc-iy-6bj" firstAttribute="top" secondItem="LWQ-5q-Iot" secondAttribute="bottom" constant="20" id="umY-ND-QLN"/>
+                            <constraint firstItem="6nb-GV-q5n" firstAttribute="top" secondItem="z8M-Xc-uf9" secondAttribute="bottom" id="wEg-bW-J3e"/>
+                            <constraint firstItem="oly-eQ-emf" firstAttribute="leading" secondItem="TJ8-Zz-mTg" secondAttribute="leadingMargin" id="xAJ-R8-MjO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aX2-oC-Grv"/>
+                                <exclude reference="e40-7d-Dgl"/>
+                                <exclude reference="ntr-UK-j3V"/>
+                                <exclude reference="gmK-RX-awh"/>
+                                <exclude reference="pQO-iQ-YEa"/>
+                                <exclude reference="rFh-Jo-Mij"/>
+                                <exclude reference="PJU-k6-dMg"/>
+                                <exclude reference="aRa-bk-jJY"/>
+                                <exclude reference="umY-ND-QLN"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="LdK-83-CG4" appends="YES" id="vce-Wv-i8X"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="lblWarnings" destination="YrC-s7-yqi" id="Q4G-sl-taa"/>
-                        <outlet property="txtPassword" destination="ZbS-ea-ACl" id="o0T-h1-UvF"/>
-                        <outlet property="txtUsername" destination="kXu-AP-YEs" id="GHN-Fg-prH"/>
-                        <segue destination="rS3-R9-Ivy" kind="show" identifier="login_success" id="Oz3-FF-gzC"/>
+                        <outlet property="lblWarnings" destination="oly-eQ-emf" id="8Xe-FQ-f2P"/>
+                        <outlet property="txtPassword" destination="Hrf-kS-juS" id="Z1G-G0-ddm"/>
+                        <outlet property="txtUsername" destination="kXu-AP-YEs" id="Wcc-Xj-vmJ"/>
+                        <segue destination="rS3-R9-Ivy" kind="showDetail" identifier="login_success" id="Oz3-FF-gzC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Q3-89-ieN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,7 +203,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1039" y="64"/>
+            <point key="canvasLocation" x="-1471" y="-84"/>
         </scene>
     </scenes>
 </document>

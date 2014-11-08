@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		001AEBF61A0BDD6D0080428F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AEBF51A0BDD6D0080428F /* LoginViewController.m */; };
 		001AEBFE1A0BF1CD0080428F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AEBFD1A0BF1CD0080428F /* User.m */; };
-		001AEC011A0C11EB0080428F /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AEC001A0C11EB0080428F /* APIController.m */; };
+		001AEC011A0C11EB0080428F /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AEC001A0C11EB0080428F /* APIService.m */; };
 		002DEFA61A0BCF2B003DFBC1 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DEFA51A0BCF2B003DFBC1 /* Meeting.m */; };
+		0098F49D1A0E16F300E2A46D /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F49C1A0E16F300E2A46D /* UserService.m */; };
 		00F5FFBF1A0BC5560007CD50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFBE1A0BC5560007CD50 /* main.m */; };
 		00F5FFC21A0BC5560007CD50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC11A0BC5560007CD50 /* AppDelegate.m */; };
 		00F5FFC51A0BC5560007CD50 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC41A0BC5560007CD50 /* MasterViewController.m */; };
@@ -36,10 +37,12 @@
 		001AEBF51A0BDD6D0080428F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		001AEBFC1A0BF1CD0080428F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		001AEBFD1A0BF1CD0080428F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		001AEBFF1A0C11EB0080428F /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
-		001AEC001A0C11EB0080428F /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
+		001AEBFF1A0C11EB0080428F /* APIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIService.h; sourceTree = "<group>"; };
+		001AEC001A0C11EB0080428F /* APIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIService.m; sourceTree = "<group>"; };
 		002DEFA41A0BCF2B003DFBC1 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		002DEFA51A0BCF2B003DFBC1 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		0098F49B1A0E16F300E2A46D /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
+		0098F49C1A0E16F300E2A46D /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
 		00F5FFB91A0BC5560007CD50 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F5FFBD1A0BC5560007CD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00F5FFBE1A0BC5560007CD50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,13 +102,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		001AEC021A0C11F20080428F /* RESTController */ = {
+		001AEC021A0C11F20080428F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				001AEBFF1A0C11EB0080428F /* APIController.h */,
-				001AEC001A0C11EB0080428F /* APIController.m */,
+				001AEBFF1A0C11EB0080428F /* APIService.h */,
+				001AEC001A0C11EB0080428F /* APIService.m */,
+				0098F49B1A0E16F300E2A46D /* UserService.h */,
+				0098F49C1A0E16F300E2A46D /* UserService.m */,
 			);
-			name = RESTController;
+			name = Services;
 			sourceTree = "<group>";
 		};
 		00F5FFB01A0BC5560007CD50 = {
@@ -131,7 +136,7 @@
 		00F5FFBB1A0BC5560007CD50 /* Bettermeeting */ = {
 			isa = PBXGroup;
 			children = (
-				001AEC021A0C11F20080428F /* RESTController */,
+				001AEC021A0C11F20080428F /* Services */,
 				001AEBF81A0BDD850080428F /* Model */,
 				001AEBF71A0BDD7D0080428F /* ViewController */,
 				00F5FFC01A0BC5560007CD50 /* AppDelegate.h */,
@@ -327,7 +332,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001AEC011A0C11EB0080428F /* APIController.m in Sources */,
+				0098F49D1A0E16F300E2A46D /* UserService.m in Sources */,
+				001AEC011A0C11EB0080428F /* APIService.m in Sources */,
 				00F5FFC21A0BC5560007CD50 /* AppDelegate.m in Sources */,
 				002DEFA61A0BCF2B003DFBC1 /* Meeting.m in Sources */,
 				001AEBFE1A0BF1CD0080428F /* User.m in Sources */,
