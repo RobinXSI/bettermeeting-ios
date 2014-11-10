@@ -1,4 +1,5 @@
 #import "Meeting.h"
+#import "User.h"
 
 @implementation Meeting
 
@@ -57,6 +58,26 @@
         [votesDownArray addObject:[voteDown objectForKey:@"email"]];
     }
     return votesDownArray;
+}
+
+- (NSComparisonResult)compare:(Meeting *)otherObject {
+    return [self.getDate compare:otherObject.getDate];
+}
+
+- (BOOL) userDidVote {
+    User* actualUser = [User createFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"ActualUser"]];
+    
+    for (NSString* email in self.getVotesUp) {
+        if ([email isEqualToString:actualUser.email]) {
+            return true;
+        }
+    }
+    for (NSString* email in self.getVotesDown) {
+        if ([email isEqualToString:actualUser.email]) {
+            return true;
+        }
+    }
+    return false;
 }
 
 @end

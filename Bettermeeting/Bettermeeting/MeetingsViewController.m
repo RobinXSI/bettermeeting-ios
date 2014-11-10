@@ -1,22 +1,16 @@
-//
-//  MasterViewController.m
-//  Bettermeeting
-//
-//  Created by Robin on 06.11.14.
-//  Copyright (c) 2014 HSR. All rights reserved.
-//
 
-#import "MasterViewController.h"
+#import "MeetingsViewController.h"
 #import "Meeting.h"
 #import "APIService.h"
 #import "UserService.h"
+#import "User.h"
 
-@interface MasterViewController ()
+@interface MeetingsViewController ()
 
 @property NSMutableArray *objects;
 @end
 
-@interface MasterViewController () {
+@interface MeetingsViewController () {
     APIService *apiService;
     UserService *userService;
 }
@@ -24,7 +18,7 @@
 @property (nonatomic, strong) NSArray *meetings;
 @end
 
-@implementation MasterViewController
+@implementation MeetingsViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -42,6 +36,7 @@
     
     [apiService getAllMeetingsOnSucces:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         _meetings = mappingResult.array;
+        _meetings = [_meetings sortedArrayUsingSelector:@selector(compare:)];
         [self.tableView reloadData];
     } onError:^(RKObjectRequestOperation *operation, NSError *error) {
         NSLog(@"What do you mean by 'there is no meeting?' : %@", error);
@@ -71,8 +66,22 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Meeting *meeting = self.meetings[indexPath.row];
-    cell.textLabel.text = meeting.goal;
-    NSLog(@"%@", meeting);
+    cell.textLabel.text = [meeting getGoal];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd.MM.yyyy HH:mm"];
+    NSString *date = [formatter stringFromDate:[meeting getDate]];
+    
+    User *actualUser = [User createFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"ActualUser"]];
+    
+    if ([meeting.getOrganizer isEqualToString:actualUser.email])
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"[Organizer] %@", date];
+    else if (meeting.userDidVote) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"[Voted] %@", date];
+    } else {
+        cell.detailTextLabel.text = date;
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.337 green:0.486 blue:0.639 alpha:1.0];
+    }
+    
     return cell;
 }
 

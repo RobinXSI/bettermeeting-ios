@@ -21,6 +21,7 @@
 - (NSArray *) getDecisions;
 - (NSArray *) getVotesUp;
 - (NSArray *) getVotesDown;
+- (BOOL) userDidVote;
 
 
 @end

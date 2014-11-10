@@ -12,9 +12,10 @@
 		001AEC011A0C11EB0080428F /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AEC001A0C11EB0080428F /* APIService.m */; };
 		002DEFA61A0BCF2B003DFBC1 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DEFA51A0BCF2B003DFBC1 /* Meeting.m */; };
 		0098F49D1A0E16F300E2A46D /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F49C1A0E16F300E2A46D /* UserService.m */; };
+		00C6CF691A111C8D00B172BC /* MeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C6CF681A111C8D00B172BC /* MeetingViewController.m */; };
 		00F5FFBF1A0BC5560007CD50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFBE1A0BC5560007CD50 /* main.m */; };
 		00F5FFC21A0BC5560007CD50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC11A0BC5560007CD50 /* AppDelegate.m */; };
-		00F5FFC51A0BC5560007CD50 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC41A0BC5560007CD50 /* MasterViewController.m */; };
+		00F5FFC51A0BC5560007CD50 /* MeetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC41A0BC5560007CD50 /* MeetingsViewController.m */; };
 		00F5FFCB1A0BC5560007CD50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F5FFC91A0BC5560007CD50 /* Main.storyboard */; };
 		00F5FFCD1A0BC5560007CD50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F5FFCC1A0BC5560007CD50 /* Images.xcassets */; };
 		00F5FFD01A0BC5560007CD50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F5FFCE1A0BC5560007CD50 /* LaunchScreen.xib */; };
@@ -43,13 +44,15 @@
 		002DEFA51A0BCF2B003DFBC1 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
 		0098F49B1A0E16F300E2A46D /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
 		0098F49C1A0E16F300E2A46D /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
+		00C6CF671A111C8D00B172BC /* MeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingViewController.h; sourceTree = "<group>"; };
+		00C6CF681A111C8D00B172BC /* MeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingViewController.m; sourceTree = "<group>"; };
 		00F5FFB91A0BC5560007CD50 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F5FFBD1A0BC5560007CD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00F5FFBE1A0BC5560007CD50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00F5FFC01A0BC5560007CD50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00F5FFC11A0BC5560007CD50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		00F5FFC31A0BC5560007CD50 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		00F5FFC41A0BC5560007CD50 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		00F5FFC31A0BC5560007CD50 /* MeetingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeetingsViewController.h; sourceTree = "<group>"; };
+		00F5FFC41A0BC5560007CD50 /* MeetingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeetingsViewController.m; sourceTree = "<group>"; };
 		00F5FFCA1A0BC5560007CD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00F5FFCC1A0BC5560007CD50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00F5FFCF1A0BC5560007CD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -83,10 +86,12 @@
 		001AEBF71A0BDD7D0080428F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				00F5FFC31A0BC5560007CD50 /* MasterViewController.h */,
-				00F5FFC41A0BC5560007CD50 /* MasterViewController.m */,
+				00F5FFC31A0BC5560007CD50 /* MeetingsViewController.h */,
+				00F5FFC41A0BC5560007CD50 /* MeetingsViewController.m */,
 				001AEBF41A0BDD6D0080428F /* LoginViewController.h */,
 				001AEBF51A0BDD6D0080428F /* LoginViewController.m */,
+				00C6CF671A111C8D00B172BC /* MeetingViewController.h */,
+				00C6CF681A111C8D00B172BC /* MeetingViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -332,12 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C6CF691A111C8D00B172BC /* MeetingViewController.m in Sources */,
 				0098F49D1A0E16F300E2A46D /* UserService.m in Sources */,
 				001AEC011A0C11EB0080428F /* APIService.m in Sources */,
 				00F5FFC21A0BC5560007CD50 /* AppDelegate.m in Sources */,
 				002DEFA61A0BCF2B003DFBC1 /* Meeting.m in Sources */,
 				001AEBFE1A0BF1CD0080428F /* User.m in Sources */,
-				00F5FFC51A0BC5560007CD50 /* MasterViewController.m in Sources */,
+				00F5FFC51A0BC5560007CD50 /* MeetingsViewController.m in Sources */,
 				00F5FFBF1A0BC5560007CD50 /* main.m in Sources */,
 				001AEBF61A0BDD6D0080428F /* LoginViewController.m in Sources */,
 			);
