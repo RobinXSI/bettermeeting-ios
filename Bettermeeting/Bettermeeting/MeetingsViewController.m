@@ -4,6 +4,7 @@
 #import "APIService.h"
 #import "UserService.h"
 #import "User.h"
+#import "MeetingViewController.h"
 
 @interface MeetingsViewController ()
 
@@ -19,6 +20,7 @@
 @end
 
 @implementation MeetingsViewController
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -67,18 +69,15 @@
     
     Meeting *meeting = self.meetings[indexPath.row];
     cell.textLabel.text = [meeting getGoal];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd.MM.yyyy HH:mm"];
-    NSString *date = [formatter stringFromDate:[meeting getDate]];
     
     User *actualUser = [User createFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"ActualUser"]];
     
     if ([meeting.getOrganizer isEqualToString:actualUser.email])
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"[Organizer] %@", date];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"[Organizer] %@", [meeting getDateAsString]];
     else if (meeting.userDidVote) {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"[Voted] %@", date];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"[Voted] %@", [meeting getDateAsString]];
     } else {
-        cell.detailTextLabel.text = date;
+        cell.detailTextLabel.text = [meeting getDateAsString];
         cell.contentView.backgroundColor = [UIColor colorWithRed:0.337 green:0.486 blue:0.639 alpha:1.0];
     }
     
@@ -98,6 +97,13 @@
     } onFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
 
     }];
+}
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"meeting_selected"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        MeetingViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.meeting = [_meetings objectAtIndex:indexPath.row];
+    }
 }
 @end

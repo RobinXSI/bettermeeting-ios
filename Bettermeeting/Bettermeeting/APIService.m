@@ -80,4 +80,21 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
+
+- (void)performGETonPath:(NSString *)path onSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success onError:(void(^)(AFHTTPRequestOperation *operation, NSError *error))error {
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:serverPath]];
+    NSString *fullPath = [NSString stringWithFormat:@"%@%@", serverPath, path];
+    
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET"
+                                                            path:fullPath
+                                                      parameters:nil];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [httpClient registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+    [operation setCompletionBlockWithSuccess:success failure:error];
+    [operation start];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
 @end

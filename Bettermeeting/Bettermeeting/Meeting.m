@@ -29,6 +29,12 @@
     return [[NSDate alloc] initWithTimeIntervalSince1970:([self.date doubleValue] / 1000)];
 }
 
+- (NSString *) getDateAsString {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd.MM.yyyy HH:mm"];
+    return [formatter stringFromDate:[self getDate]];
+}
+
 - (NSArray *) getActionPoints {
     NSMutableArray *actionPointArray = [[NSMutableArray alloc] init];
     for (NSDictionary* actionPoint in self.actionPoints) {

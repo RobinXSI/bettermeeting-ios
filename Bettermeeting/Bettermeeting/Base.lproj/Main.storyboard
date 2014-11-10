@@ -38,7 +38,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="j5F-uX-iSH" kind="show" id="9Ll-2D-22U"/>
+                                    <segue destination="j5F-uX-iSH" kind="show" identifier="meeting_selected" id="9Ll-2D-22U"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -72,17 +72,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-Gh-SiQ">
-                                <rect key="frame" x="16" y="72" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-Gh-SiQ">
+                                <rect key="frame" x="16" y="72" width="568" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Decision" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1f-ey-EMs">
+                                <rect key="frame" x="16" y="121" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Organizer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6y-fx-LHW">
+                                <rect key="frame" x="16" y="150" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KU8-7Y-Vpl">
+                                <rect key="frame" x="16" y="179" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-ux-YvX">
+                                <rect key="frame" x="120" y="121" width="464" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc9-xp-GBJ">
+                                <rect key="frame" x="120" y="150" width="464" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8y-gt-x2J">
+                                <rect key="frame" x="120" y="178" width="464" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqi-EH-Tsu">
+                                <rect key="frame" x="16" y="238" width="30" height="30"/>
+                                <state key="normal" title="Like">
+                                    <color key="titleColor" red="0.56862745100000001" green="0.76862745099999996" blue="0.42352941179999998" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="likeClicked:" destination="j5F-uX-iSH" eventType="touchUpInside" id="q7v-hd-hHR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW1-Nz-Sxx">
+                                <rect key="frame" x="539" y="238" width="45" height="30"/>
+                                <state key="normal" title="Dislike">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dislikeClicked:" destination="j5F-uX-iSH" eventType="touchUpInside" id="k6K-rt-hiA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KU8-7Y-Vpl" firstAttribute="leading" secondItem="1f5-cS-dMg" secondAttribute="leadingMargin" id="0SU-gh-NDx"/>
+                            <constraint firstItem="nW1-Nz-Sxx" firstAttribute="trailing" secondItem="1f5-cS-dMg" secondAttribute="trailingMargin" id="2am-Be-3us"/>
+                            <constraint firstItem="e8y-gt-x2J" firstAttribute="trailing" secondItem="1f5-cS-dMg" secondAttribute="trailingMargin" id="4T5-R5-5qC"/>
+                            <constraint firstItem="Wqi-EH-Tsu" firstAttribute="top" secondItem="KU8-7Y-Vpl" secondAttribute="bottom" constant="38" id="69j-93-b2u"/>
+                            <constraint firstItem="fc9-xp-GBJ" firstAttribute="top" secondItem="fNK-ux-YvX" secondAttribute="bottom" constant="8" id="7KB-zY-aao"/>
+                            <constraint firstItem="fNK-ux-YvX" firstAttribute="top" secondItem="sEx-Gh-SiQ" secondAttribute="bottom" constant="8" id="7qL-2F-rbf"/>
+                            <constraint firstItem="fNK-ux-YvX" firstAttribute="trailing" secondItem="1f5-cS-dMg" secondAttribute="trailingMargin" id="8zo-d8-srE"/>
+                            <constraint firstItem="fNK-ux-YvX" firstAttribute="leading" secondItem="p1f-ey-EMs" secondAttribute="trailing" constant="37" id="CcW-OL-ZPf"/>
+                            <constraint firstItem="p1f-ey-EMs" firstAttribute="leading" secondItem="1f5-cS-dMg" secondAttribute="leadingMargin" id="DX6-Lt-yWK"/>
+                            <constraint firstItem="nW1-Nz-Sxx" firstAttribute="top" secondItem="e8y-gt-x2J" secondAttribute="bottom" constant="39" id="G0X-V1-6T1"/>
+                            <constraint firstItem="p1f-ey-EMs" firstAttribute="top" secondItem="sEx-Gh-SiQ" secondAttribute="bottom" constant="8" id="GYX-hu-w5o"/>
+                            <constraint firstItem="sEx-Gh-SiQ" firstAttribute="top" secondItem="Bru-gv-fbl" secondAttribute="bottom" constant="8" id="KBL-nf-Ag9"/>
+                            <constraint firstItem="sEx-Gh-SiQ" firstAttribute="trailing" secondItem="1f5-cS-dMg" secondAttribute="trailingMargin" id="U53-jk-7zK"/>
+                            <constraint firstItem="fc9-xp-GBJ" firstAttribute="leading" secondItem="r6y-fx-LHW" secondAttribute="trailing" constant="30" id="YRN-03-Gqj"/>
+                            <constraint firstItem="Wqi-EH-Tsu" firstAttribute="leading" secondItem="1f5-cS-dMg" secondAttribute="leadingMargin" id="YSk-X9-BJH"/>
+                            <constraint firstItem="e8y-gt-x2J" firstAttribute="leading" secondItem="KU8-7Y-Vpl" secondAttribute="trailing" constant="68" id="a8a-tZ-2aB"/>
+                            <constraint firstItem="fc9-xp-GBJ" firstAttribute="trailing" secondItem="1f5-cS-dMg" secondAttribute="trailingMargin" id="dOu-sf-cO5"/>
+                            <constraint firstItem="r6y-fx-LHW" firstAttribute="leading" secondItem="1f5-cS-dMg" secondAttribute="leadingMargin" id="mma-8G-ePN"/>
+                            <constraint firstItem="e8y-gt-x2J" firstAttribute="top" secondItem="fc9-xp-GBJ" secondAttribute="bottom" constant="7" id="raT-35-mDR"/>
+                            <constraint firstItem="KU8-7Y-Vpl" firstAttribute="top" secondItem="r6y-fx-LHW" secondAttribute="bottom" constant="8" id="vsD-uP-emU"/>
+                            <constraint firstItem="sEx-Gh-SiQ" firstAttribute="leading" secondItem="1f5-cS-dMg" secondAttribute="leadingMargin" id="wKZ-Y1-s2M"/>
+                            <constraint firstItem="r6y-fx-LHW" firstAttribute="top" secondItem="p1f-ey-EMs" secondAttribute="bottom" constant="8" id="xbl-Ck-Wmz"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonDislike" destination="nW1-Nz-Sxx" id="9rY-E1-6Vy"/>
+                        <outlet property="buttonLike" destination="Wqi-EH-Tsu" id="LHL-Kk-ctg"/>
+                        <outlet property="txtDate" destination="e8y-gt-x2J" id="K9K-DT-8Nm"/>
+                        <outlet property="txtDecision" destination="fNK-ux-YvX" id="H8A-bg-kah"/>
                         <outlet property="txtMeetingGoal" destination="sEx-Gh-SiQ" id="EuL-v7-YQt"/>
+                        <outlet property="txtOrganizer" destination="fc9-xp-GBJ" id="TQu-Ur-qbx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ntm-GQ-0Na" userLabel="First Responder" sceneMemberID="firstResponder"/>

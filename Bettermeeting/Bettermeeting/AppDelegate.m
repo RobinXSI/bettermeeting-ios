@@ -1,13 +1,7 @@
-//
-//  AppDelegate.m
-//  Bettermeeting
-//
-//  Created by Robin on 06.11.14.
-//  Copyright (c) 2014 HSR. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import <RestKit/RestKit.h>
+#import "MeetingViewController.h"
+#import "Meeting.h"
 
 
 @interface AppDelegate ()
@@ -44,9 +38,48 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSString *meetingId = [[userInfo valueForKey:@"aps"] valueForKey:@"meetingId"];
     NSLog(@"Received Notification");
-    
     NSLog(@"%@", meetingId);
     
+    if (application.applicationState == UIApplicationStateActive) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Did receive a Remote Notification"
+                                                            message:[NSString stringWithFormat:@"Your App name received this notification while it was running:\n%@",[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Show"
+                                                  otherButtonTitles:@"Cancel", nil];
+        
+        
+        [alertView show];
+    }
+    
+    /*
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.]
+    MeetingViewController *meetingViewController = [[MeetingViewController alloc] init];
+    
+    Meeting *meeting = [[Meeting alloc] init];
+    meeting.goal = @"Test bestanden";
+    meetingViewController.meeting = meeting;
+    [navigationController.visibleViewController.navigationController pushViewController:meetingViewController animated:NO];
+     
+     */
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 0) {
+        NSLog(@"OK Button pressed");
+        //MeetingViewController *meetingViewController = [[MeetingViewController alloc] init];
+        UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        MeetingViewController *meetingViewController = [mainstoryboard instantiateViewControllerWithIdentifier:@""];
+        Meeting *meeting = [[Meeting alloc] init];
+        meeting.goal = @"Test bestanden";
+        meetingViewController.meeting = meeting;
+        
+        
+        
+        [self.window.rootViewController presentViewController:meetingViewController animated:YES completion:nil];
+    } else {
+        NSLog(@"Cancel Button pressed");
+    }
 }
 
 

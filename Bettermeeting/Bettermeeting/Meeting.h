@@ -17,6 +17,7 @@
 - (NSString *) getGoal;
 - (NSString *) getOrganizer;
 - (NSDate *) getDate;
+- (NSString *) getDateAsString;
 - (NSArray *) getActionPoints;
 - (NSArray *) getDecisions;
 - (NSArray *) getVotesUp;
