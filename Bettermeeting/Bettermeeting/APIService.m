@@ -81,19 +81,30 @@
 }
 
 
-- (void)performGETonPath:(NSString *)path onSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success onError:(void(^)(AFHTTPRequestOperation *operation, NSError *error))error {
+- (void)performPUTonPath:(NSString *)path withParameters:(NSDictionary *)params onSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void(^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:serverPath]];
+    
+    
     NSString *fullPath = [NSString stringWithFormat:@"%@%@", serverPath, path];
     
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET"
-                                                            path:fullPath
-                                                      parameters:nil];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [httpClient registerHTTPOperationClass:[AFHTTPRequestOperation class]];
-    [operation setCompletionBlockWithSuccess:success failure:error];
-    [operation start];
+    [httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    httpClient.parameterEncoding = AFJSONParameterEncoding;
+    [httpClient setDefaultHeader:@"Content-Type" value:@"text/json"];
+    
+    [httpClient putPath:fullPath
+             parameters:params
+                success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSLog(@"PUT Successfully delivered");
+                    success(operation, responseObject);
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    failure(operation, error);
+                    NSLog(@"PUT not successfully delivered");
+                }];
+    
+    
+    
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 

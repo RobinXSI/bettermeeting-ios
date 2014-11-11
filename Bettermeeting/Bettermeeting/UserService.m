@@ -1,4 +1,4 @@
-//
+    //
 //  UserService.m
 //  Bettermeeting
 //
@@ -101,6 +101,15 @@
                                temp.lastName = userDetails[@"lastName"];
                                temp.password = userDetails[@"password"];
                                temp.pushToken = [self getPushToken];
+                               
+                               NSString *remotePushToken = userDetails[@"pushToken"];
+                               if(!remotePushToken || ![temp.pushToken isEqualToString:remotePushToken]) {
+                                   NSLog(@"RemoteToken has been Updated. PUT To Server");
+                                   [self updateRemotePushTokenWithToken:temp.pushToken];
+                               }
+                               
+                               NSLog(@"%@", remotePushToken);
+                               temp.pushToken = [self getPushToken];
                                [self persistUserSettingsForUser:temp];
                            }
                            success(operation, responseObject);
@@ -109,6 +118,21 @@
                              NSLog(@"Error: %@", error);
                              failure(operation, error);
                          }];
+}
+
+- (void)updateRemotePushTokenWithToken:(NSString *)token {
+
+    NSString *path = @"/api/user/pushtoken";
+    NSDictionary *params = @{@"pushToken": token};
+    
+    [apiService performPUTonPath:path
+                  withParameters:params
+                       onSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                           NSLog(@"Response: %@", [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
+                       }
+                       onFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                           NSLog(@"Error: %@", error);
+                       }];
 }
 
 - (void)doLogoutOnSuccess:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void(^)(AFHTTPRequestOperation *operation, NSError *error))failure{
