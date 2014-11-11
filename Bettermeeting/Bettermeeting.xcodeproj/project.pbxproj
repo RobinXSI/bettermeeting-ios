@@ -13,6 +13,7 @@
 		002DEFA61A0BCF2B003DFBC1 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DEFA51A0BCF2B003DFBC1 /* Meeting.m */; };
 		0098F49D1A0E16F300E2A46D /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0098F49C1A0E16F300E2A46D /* UserService.m */; };
 		00C6CF691A111C8D00B172BC /* MeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C6CF681A111C8D00B172BC /* MeetingViewController.m */; };
+		00F37D341A123E55009500DE /* MeetingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F37D331A123E55009500DE /* MeetingService.m */; };
 		00F5FFBF1A0BC5560007CD50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFBE1A0BC5560007CD50 /* main.m */; };
 		00F5FFC21A0BC5560007CD50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC11A0BC5560007CD50 /* AppDelegate.m */; };
 		00F5FFC51A0BC5560007CD50 /* MeetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5FFC41A0BC5560007CD50 /* MeetingsViewController.m */; };
@@ -46,6 +47,8 @@
 		0098F49C1A0E16F300E2A46D /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
 		00C6CF671A111C8D00B172BC /* MeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingViewController.h; sourceTree = "<group>"; };
 		00C6CF681A111C8D00B172BC /* MeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingViewController.m; sourceTree = "<group>"; };
+		00F37D321A123E55009500DE /* MeetingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingService.h; sourceTree = "<group>"; };
+		00F37D331A123E55009500DE /* MeetingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingService.m; sourceTree = "<group>"; };
 		00F5FFB91A0BC5560007CD50 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F5FFBD1A0BC5560007CD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00F5FFBE1A0BC5560007CD50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				001AEC001A0C11EB0080428F /* APIService.m */,
 				0098F49B1A0E16F300E2A46D /* UserService.h */,
 				0098F49C1A0E16F300E2A46D /* UserService.m */,
+				00F37D321A123E55009500DE /* MeetingService.h */,
+				00F37D331A123E55009500DE /* MeetingService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				00F5FFC51A0BC5560007CD50 /* MeetingsViewController.m in Sources */,
 				00F5FFBF1A0BC5560007CD50 /* main.m in Sources */,
 				001AEBF61A0BDD6D0080428F /* LoginViewController.m in Sources */,
+				00F37D341A123E55009500DE /* MeetingService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,15 @@
 #import "MeetingViewController.h"
+#import "MeetingService.h"
 #import "APIService.h"
+
 
 @interface MeetingViewController ()
 
 @end
 
-@implementation MeetingViewController
+@implementation MeetingViewController {
+    MeetingService *meetingService;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -16,10 +20,8 @@
     self.txtOrganizer.text = _meeting.getOrganizer;
     self.txtDate.text = _meeting.getDateAsString;
     
-    if (_meeting.userDidVote) {
-        [self.buttonLike setEnabled:NO];
-        [self.buttonDislike setEnabled:NO];
-    }
+    
+    meetingService = [[MeetingService alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,8 +31,21 @@
 
 - (IBAction)likeClicked:(id)sender {
     
+    NSLog(@"Like Clicked");
+    [meetingService doLikeMeeting:_meeting onSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Meeting liked Sucessfully");
+    } onFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error Liking Meeting");
+    }];
+    
+    
 }
 
 - (IBAction)dislikeClicked:(id)sender {
+    [meetingService doDislikeMeeting:_meeting onSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Meeting disliked Sucessfully");
+    } onFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error Disliking Meeting");
+    }];
 }
 @end
