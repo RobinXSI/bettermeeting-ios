@@ -26,8 +26,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-    <key>IPServerAdress</key>
-    <string>http://192.168.1.21:9000</string>
+	<key>IPServerAdress</key>
+	<string>https://bettermeeting.herokuapp.com</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
